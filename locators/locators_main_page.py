@@ -15,11 +15,14 @@ class MainPage(WebPage):
 
     btn_headers_home = WebElement(xpath= '(//a[@href="/en-us/"])[1]')
     btn_headers_bonus = WebElement(xpath='//*[@href="https://www.onetwotrip.com/en-us/loyalty/bonuses/"]')
-    btn_headers_customer_support = WebElement(xpath='//*[@data-locator="nav-dropdown"]//div")]')
+    btn_headers_customer_support = WebElement(xpath='//div[@data-locator="nav-dropdown"]')
     btn_drop_down_faq = WebElement(xpath='//*[@href = "https://support.onetwotrip.com/hc/en-us", "faq")]')
     btn_headers_my_travel = WebElement(xpath='//a[@href="https://www.onetwotrip.com/en-us/ticket/"]')
     btn_headers_personal_area = WebElement(xpath='//button[@data-locator="Button profileLogin" and @type="button"]//div')
     btn_headers_language = WebElement(xpath='//*[@fill="#F0F0F0" and @cx="256" and @cy="256" and @r="256"]')
+
+    btn_footers_contact_support = WebElement(xpath='//div[contains(concat(' ',normalize-space(@class),' '),"_8bVkG")]')
+    btn_footers_faq = WebElement(xpath="//a[@href='//support.onetwotrip.com/hc/en-us' and text()='FAQ']")
 
 
     btn_pip_up_сookie = WebElement(id="accept")

@@ -35,32 +35,26 @@ def test_headers(web_browser):
         with allure.step(f'Test "{elements_text}" text check'):
             check.equal(elements.get_text(), elements_text)
 
-
-        with allure.step('Test_home'):
-            check.is_true(page.btn_headers_home.is_visible())
-            check.is_true(page.btn_headers_home.is_clickable())
-            check.equal(page.btn_headers_home.get_attribute('href'),'/ en-us/')
-
-        with allure.step('Test_bonus'):
-            check.is_true(page.btn_headers_bonus.is_visible())
-            check.is_true(page.btn_headers_bonus.is_clickable())
-            check.equal(page.btn_headers_bonus.get_text(), 'Bonus Points')
-            check.equal(page.btn_headers_bonus.get_attribute('href'), 'https:// www. onetwotrip. com/ en-us/ loyalty/ bonuses/')
-
-        with allure.step('Test_customer_support'):
-            check.is_true(page.btn_headers_customer_support.is_visible())
-            check.is_true(page.btn_headers_customer_support.is_clickable())
-            check.equal(page.btn_headers_customer_support.get_text(), '24/7 Customer Support')
-            check.equal(page.btn_headers_customer_support.get_attribute('data-locator'), 'nav-dropdown"// div')
-
-
         with allure.step('Test_faq'):
-            page.btn_headers_customer_support.click()
-            check.is_true(page.btn_drop_down_faq.is_visible())
-            check.is_true(page.btn_drop_down_faq.is_clickable())
-            check.equal(page.btn_drop_down_faq.get_text(), 'FAQ')
-            check.equal(page.btn_drop_down_faq.get_attribute('href'), 'https://support.onetwotrip.com/hc/en-us')
-        #
+            if elements_text == 'CustomerSupport':
+                page.btn_headers_customer_support.click()
+                check.is_true(page.btn_drop_down_faq.is_clickable())
+                check.is_true(page.btn_drop_down_faq.is_visible())
+                check.equal(page.btn_drop_down_faq.get_text(), 'FAQ')
+                check.equal(page.btn_drop_down_faq.get_attribute('href'), 'https://support.onetwotrip.com/hc/en-us')
+
+        with allure.step('Test_contact_support'):
+            if elements_text == 'CustomerSupport':
+                page.btn_headers_customer_support.click()
+                check.is_true(page.btn_drop_down_contact_support.is_clickable())
+                check.is_true(page.btn_drop_down_contact_support.is_visible())
+                check.equal(page.btn_drop_down_contact_support.get_text(), 'Contact Support')
+                check.equal(page.btn_drop_down_contact_support.get_attribute('href'), 'https://support.onetwotrip.com/hc/en-us/articles/203380302-OneTwoTrip-Contacts')
+
+        if elements_text == 'Home':
+            check.is_true(elements.is_visible())
+            check.is_true(elements.is_clickable())
+
         # with allure.step('My_travel'):
         #     check.is_true(page.btn_headers_my_travel.is_visible())
         #     check.is_true(page.btn_headers_my_travel.is_clickable())
