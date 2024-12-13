@@ -44,13 +44,13 @@ def test_headers(web_browser):
         with allure.step('Test_bonus'):
             check.is_true(page.btn_headers_bonus.is_visible())
             check.is_true(page.btn_headers_bonus.is_clickable())
-            check.equal(page.btn_headers_bonus.get_text(), 'Bonus')
+            check.equal(page.btn_headers_bonus.get_text(), 'Bonus Points')
             check.equal(page.btn_headers_bonus.get_attribute('href'), 'https:// www. onetwotrip. com/ en-us/ loyalty/ bonuses/')
 
         with allure.step('Test_customer_support'):
             check.is_true(page.btn_headers_customer_support.is_visible())
             check.is_true(page.btn_headers_customer_support.is_clickable())
-            check.equal(page.btn_headers_customer_support.get_text(), 'CustomerSupport')
+            check.equal(page.btn_headers_customer_support.get_text(), '24/7 Customer Support')
             check.equal(page.btn_headers_customer_support.get_attribute('data-locator'), 'nav-dropdown"// div')
 
 
@@ -64,19 +64,18 @@ def test_headers(web_browser):
         # with allure.step('My_travel'):
         #     check.is_true(page.btn_headers_my_travel.is_visible())
         #     check.is_true(page.btn_headers_my_travel.is_clickable())
-        #     check.equal(page.btn_headers_my_travel.get_text(), 'My_travel')
+        #     check.equal(page.btn_headers_my_travel.get_text(), 'My Travel')
         #     check.equal(page.btn_headers_my_travel.get_attribute('href'), 'https:// www. onetwotrip. com/ en-us/ ticket/')
         #
         # with allure.step('Personal_area'):
         #     check.is_true(page.btn_headers_personal_area.is_visible())
         #     check.is_true(page.btn_headers_personal_area.is_clickable())
-        #     check.equal(page.btn_headers_personal_area.get_text(), 'Personal_area')
+        #     check.equal(page.btn_headers_personal_area.get_text(), 'Personal area')
         #     check.equal(page.btn_headers_personal_area.get_attribute('button[@data-locator'), 'Button profileLogin" and @type="button"]// div')
         #
         # with allure.step('Language'):
         #     check.is_true(page.btn_headers_language.is_visible())
         #     check.is_true(page.btn_headers_language.is_clickable())
-        #     check.equal(page.btn_headers_language.get_text(), 'Language')
         #     check.equal(page.btn_headers_language.get_attribute('@fill="#F0F0F0"'), 'and @cx="256" and @cy="256" and @r="256"]')
         #
         #
