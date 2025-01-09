@@ -18,10 +18,10 @@ def test_headers(web_browser):
 
     elements_headers = [
         (page.btn_headers_home, 'Home', 'https://www.onetwotrip.com/en-us/'),
-        (page.btn_headers_bonus, 'Bonus','https://www.onetwotrip.com/en-us/loyalty/bonuses/'),
-        (page.btn_headers_customer_support, 'CustomerSupport','https://www.onetwotrip.com/en-us/'),
-        (page.btn_headers_my_travel, 'MyTravel', 'https://www.onetwotrip.com/en-us/ticket/'),
-        (page.btn_headers_personal_area, 'PersonalArea', 'https://www.onetwotrip.com/en-us/ticket/'),
+        (page.btn_headers_bonus_points, 'Bonus Points','https://www.onetwotrip.com/en-us/loyalty/bonuses/'),
+        (page.btn_headers_customer_support, '24/7 Customer Support','https://www.onetwotrip.com/en-us/'),
+        (page.btn_headers_my_travel, 'My Travel', 'https://www.onetwotrip.com/en-us/ticket/'),
+        (page.btn_headers_personal_area, 'Personal area', 'https://www.onetwotrip.com/en-us/'),
         (page.btn_headers_language, 'Language', 'https://www.onetwotrip.com/en-us/')
     ]
 
@@ -36,7 +36,7 @@ def test_headers(web_browser):
             check.equal(elements.get_text(), elements_text)
 
         with allure.step('Test_faq'):
-            if elements_text == 'CustomerSupport':
+            if elements_text == '24/7 Customer Support':
                 page.btn_headers_customer_support.click()
                 check.is_true(page.btn_drop_down_faq.is_clickable())
                 check.is_true(page.btn_drop_down_faq.is_visible())
@@ -44,16 +44,17 @@ def test_headers(web_browser):
                 check.equal(page.btn_drop_down_faq.get_attribute('href'), 'https://support.onetwotrip.com/hc/en-us')
 
         with allure.step('Test_contact_support'):
-            if elements_text == 'CustomerSupport':
+            if elements_text == '24/7 CustomerSupport':
                 page.btn_headers_customer_support.click()
                 check.is_true(page.btn_drop_down_contact_support.is_clickable())
                 check.is_true(page.btn_drop_down_contact_support.is_visible())
                 check.equal(page.btn_drop_down_contact_support.get_text(), 'Contact Support')
                 check.equal(page.btn_drop_down_contact_support.get_attribute('href'), 'https://support.onetwotrip.com/hc/en-us/articles/203380302-OneTwoTrip-Contacts')
 
-        if elements_text == 'Home':
-            check.is_true(elements.is_visible())
-            check.is_true(elements.is_clickable())
+        with allure.step('Test_Home'):
+            if elements_text == 'Home':
+                check.is_true(elements.is_visible())
+                check.is_true(elements.is_clickable())
 
         # with allure.step('My_travel'):
         #     check.is_true(page.btn_headers_my_travel.is_visible())

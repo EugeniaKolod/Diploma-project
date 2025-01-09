@@ -16,12 +16,12 @@ def test_footers(web_browser):
     page = MainPage(web_browser)
 
     elements_footers = [
-        (page.btn_footers_, 'Contact support', 'https://support.onetwotrip.com/hc/en-us?utm_source=mainMenu'),
-        (page.btn_footers_, 'FAQ', 'https://support.onetwotrip.com/hc/en-us/'),
-        (page.btn_footers_, 'Bonus Points', '√=https://www.onetwotrip.com/en-us/loyalty/bonuses/'),
-        (page.btn_footers_, 'User Agreement', 'https://support.onetwotrip.com/hc/en-us/sections/201758669#208009765'),
-        (page.btn_footers_, 'Privacy Policy', 'https://support.onetwotrip.com/hc/en-us/articles/208009765-OneTwoTrip-Privacy-Policy')
-        (page.btn_footers_, 'About us', 'https://www.onetwotrip.com/en-us/landings/about/')
+        (page.btn_footers_contact_support, 'Contact support', 'https://support.onetwotrip.com/hc/en-us?utm_source=mainMenu'),
+        (page.btn_footers_faq, 'FAQ', 'https://support.onetwotrip.com/hc/en-us/'),
+        (page.btn_footers_bonus_points, 'Bonus Points', 'https://www.onetwotrip.com/en-us/loyalty/bonuses/'),
+        (page.btn_footers_user_agreement, 'User Agreement', 'https://support.onetwotrip.com/hc/en-us/sections/201758669#208009765'),
+        (page.btn_footers_privacy_policy, 'Privacy policy', 'https://support.onetwotrip.com/hc/en-us/articles/208009765-OneTwoTrip-Privacy-Policy'),
+        (page.btn_footers_about_us, 'About Us', 'https://www.onetwotrip.com/en-us/landings/about/')
     ]
 
     for elements, elements_text, url_elements in elements_footers:

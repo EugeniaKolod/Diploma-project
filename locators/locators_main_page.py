@@ -13,8 +13,8 @@ class MainPage(WebPage):
 
         super().__init__(web_driver, url)
 
-    btn_headers_home = WebElement(xpath= '(//a[@href="/en-us/"])[1]')
-    btn_headers_bonus = WebElement(xpath='//*[@href="https://www.onetwotrip.com/en-us/loyalty/bonuses/"]')
+    btn_headers_home = WebElement(xpath= '(//a[@href="/en-us/"])')
+    btn_headers_bonus_points = WebElement(xpath='//*[@href="https://www.onetwotrip.com/en-us/loyalty/bonuses/"]')
     btn_headers_customer_support = WebElement(xpath='//div[@data-locator="nav-dropdown"]')
     btn_drop_down_faq = WebElement(xpath='//*[@href = "https://support.onetwotrip.com/hc/en-us", "faq")]')
     btn_headers_my_travel = WebElement(xpath='//a[@href="https://www.onetwotrip.com/en-us/ticket/"]')
@@ -23,6 +23,12 @@ class MainPage(WebPage):
 
     btn_footers_contact_support = WebElement(xpath='//div[contains(concat(' ',normalize-space(@class),' '),"_8bVkG")]')
     btn_footers_faq = WebElement(xpath="//a[@href='//support.onetwotrip.com/hc/en-us' and text()='FAQ']")
+    btn_footers_bonus_points = WebElement(xpath='//*[@ rel="nofollow"])[2]')
+    btn_footers_user_agreement = WebElement(xpath='(//*[@rel="nofollow"])[3]')
+    btn_footers_privacy_policy = WebElement(xpath='(//*[@rel="nofollow"])[4]')
+    btn_footers_about_us = WebElement(xpath='(//*[@rel="nofollow"])[5]')
+
+
 
 
     btn_pip_up_сookie = WebElement(id="accept")
